@@ -1,3 +1,4 @@
 [submodule "TSTWEB"]
 	path = TSTWEB
 	url = https://github.com/infpbahillo-elorrieta/TSTWEB.git
+	branch = docker
