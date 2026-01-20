@@ -1,12 +1,20 @@
 services:
-  apache:
+  frontend:
     build:
-      dockerfile: apache/Dockerfile
-    container_name: my-php-compose-container
-    depends_on:
-      - mysql
+      dockerfile: frontend/Dockerfile
+    container_name: my-frontend-compose-container
     ports:
       - "8080:80"
+    networks:
+      - my-network
+  backend:
+    build:
+      dockerfile: backend/Dockerfile
+    container_name: my-backend-compose-container
+    ports:
+      - "8000:80"
+    depends_on:
+      - mysql
     networks:
       - my-network
   mysql:
